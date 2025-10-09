@@ -71,7 +71,7 @@ const webTechs = ['HTML', 'CSS', 'JS', 'React', 'Redux', 'Node', 'MongDB'] // ar
 const countries = ['Finland', 'Denmark', 'Sweden', 'Norway', 'Iceland'] // array of strings, countries
 
 let lastIndex = countries.length - 1;
-countries[lastIndex] = "Korea"; // Replacing Kenya by Korea
+countries[lastIndex] = "Korea";
 
 console.log(countries.sort());
 
@@ -81,3 +81,56 @@ console.log(fruits.sort())
 for (let i = 0; i <= 16; i++) {
   console.log(i.toString());
 }
+
+function calculateAge(birthYear, currentYear = 2019) {
+  let age = currentYear - birthYear;
+  return age;
+}
+
+console.log("Age: ", calculateAge(1819));
+
+function calculateEqn(a, b, c, x = null, y = null) {
+  // for : ax + by + c = 0.
+  // case1 if x is given
+  if (x !== null) {
+    if (b === 0) {
+      console.log('Error , eqn cannot be found hen value is zero')
+    }
+    return (-(a * x + c)) / b;
+  }
+  if (y !== null) {
+    if (a === 0) {
+      console.log('Error , eqn cannot be found hen value is zero')
+    }
+    return (-(b * y + c)) / a;
+  }
+}
+console.log(`The value of Y is :` + calculateEqn(2, 3, 5, 1));
+console.log(`The value of X is :` + calculateEqn(2, 3, 5, null, 1));
+
+// function to generate adom keys for ne users 
+function generateKeys(Characters, Ids) {
+  if (
+    isNaN(Characters)|| isNaN(Ids)|| Characters <= 0 || Ids <=0
+  ) {
+    alert("Please enter valid positive numbers!");
+    return [];
+  }
+  if (Characters > 15) {
+    alert("Number of characters should not exceed 15.");
+    return [];
+  }
+  let Character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+  let Id = [];
+  for (let i = 0; i < Ids; i++){
+    let userKey = "";
+    for (let j = 0; j < Characters; j++){
+      const randomKey = Math.floor(Math.random() * Character.length);
+      userKey += Character[randomKey];
+    }
+   Id.push(userKey)
+  }return Id
+    
+}
+console.log(generateKeys(10, 5).toString().split(' '));
+
