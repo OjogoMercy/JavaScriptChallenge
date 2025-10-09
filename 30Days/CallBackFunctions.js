@@ -22,12 +22,12 @@ const scoresBelow80 = scores.filter((score) => score.score < 75);
 console.log("Students who scored below 75:");
 console.log(scoresBelow80);
 console.log("Students who scored above 75:");
-console.log( scoresOver80);
-const filterNames = scores.filter((score) => score.name.length === 5)
-console.log(filterNames)
-const findScore = scores.find((score) => score.score > 60)
-console.log('Scores above 60:')
-console.log(scoresOver80.map((score) => score.name))
+console.log(scoresOver80);
+const filterNames = scores.filter((score) => score.name.length === 5);
+console.log(filterNames);
+const findScore = scores.find((score) => score.score > 60);
+console.log("Scores above 60:");
+console.log(scoresOver80.map((score) => score.name));
 
 const spokenLanguages = [
   { country: "English", count: 91 },
@@ -41,22 +41,30 @@ const spokenLanguages = [
   { country: "Chinese", count: 5 },
   { country: "Swahili", count: 4 },
 ];
-const mostSpoken = spokenLanguages.filter((count) => count.count > 40)
-console.log('Most Soken Languages :')
-console.log(mostSpoken)
+const mostSpoken = spokenLanguages.filter((count) => count.count > 40);
+console.log("Most Soken Languages :");
+console.log(mostSpoken);
 
-// to calculate measure of central tendency 
-const ages = [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26]
-function calculateMean(ages){
-    const sum = ages.reduce((total, age) => total + age, 0);
-    const mean = sum / ages.length;
-    return mean;
+// to calculate measure of central tendency
+const ages = [
+  31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37,
+  31, 34, 24, 33, 29, 26,
+];
+function calculateMean(ages) {
+  const sum = ages.reduce((total, age) => total + age, 0);
+  const mean = sum / ages.length;
+  return mean;
 }
-console.log(`The mean is ` + calculateMean(ages))
-function calculateMedian(ages){
-    const sortedAges = ages.slice().sort((a, b) => a - b);
-    const mid = Math.floor(sortedAges.length / 2);
-    const median = sortedAges.length % 2 !== 0 ? sortedAges[mid] : (sortedAges[mid - 1] + sortedAges[mid]) / 2;
-    return median;
+console.log(`The mean is ` + calculateMean(ages));
+function calculateMedian(ages) {
+  const sortedAges = ages.slice().sort((a, b) => a - b);
+  const mid = Math.floor(sortedAges.length / 2);
+  const median =
+    sortedAges.length % 2 !== 0
+      ? sortedAges[mid]
+      : (sortedAges[mid - 1] + sortedAges[mid]) / 2;
+  return median;
 }
-console.log("The median is :" + calculateMedian(ages))
+console.log("The median is :" + calculateMedian(ages));
+const count = ages.length();
+console.log(count.toString());
