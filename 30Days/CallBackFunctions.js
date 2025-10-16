@@ -152,5 +152,25 @@ const todoList = [
 
 for (const { task, time, completed } of todoList) {
   console.log(task, time, completed);
+  // example of regex using a pattern to match a word in a string
+  pattern = /Test/
+  console.log(task.match(pattern))
+  console.log(task.search(pattern))
 }
+// replaving a word using regex
+const txt =
+  "Python is the most beautiful language that a human begin has ever created.\
+I recommend python for a first programming language";
+
+matchReplaced = txt.replace(/Python|python/, "JavaScript");
+console.log(matchReplaced);
+
+// Dya 12Regular Expressions
+// Creating Regesx using patterns
+
+// let pattern = 'Test'
+// let Regex = new RegexExp(pattern)
+
+
+
 
