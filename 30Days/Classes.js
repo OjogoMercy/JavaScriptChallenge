@@ -35,8 +35,15 @@ class Student extends Person {
   saySomething() {
     console.log("I am a child of the person class");
   }
+  doSomething() {
+    console.log(
+      "Energy is the ability to do work , does " +
+        this.firstName +
+        " have energy"
+    );
+  }
 }
-
 const s1 = new Student("Asabeneh", "Yetayeh", "Finland", 250, "Helsinki");
 console.log(s1);
 console.log(s1.saySomething());
+console.log(s1.doSomething())
