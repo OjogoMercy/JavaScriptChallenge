@@ -47,3 +47,23 @@ const s1 = new Student("Asabeneh", "Yetayeh", "Finland", 250, "Helsinki");
 console.log(s1);
 console.log(s1.saySomething());
 console.log(s1.doSomething())
+
+
+// Promises 
+// Promise
+const doPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const skills = ['HTML', 'CSS', 'JS']
+    if (skills.length > 2) {
+      resolve(skills)
+    } else {
+      reject('Something wrong has happened')
+    }
+  }, 2000)
+})
+
+doPromise
+  .then(result => {
+    console.log(result)
+  })
+  .catch(error => console.log(error))
